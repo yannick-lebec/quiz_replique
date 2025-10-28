@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz replique</title>
-    <link rel="stylesheet" href="/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Game</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="./questions.js"></script>
 </head>
 <body>
-    <div id="quiz_accueil">
+
+     <div id="quiz_accueil">
         <div id="photo_accueil">
             <img src="/images/photo_accueil.webp" alt="photo Asterix et Obelix">
             <div>
@@ -18,9 +19,26 @@
             </div>
         </div>
     </div>
-    
+
+  <div id="quiz-container">
+   
+    <div class="question" id="question-text">
+      <!-- La question sera injectée ici par JavaScript -->
+    </div>
 
     
-    <script src="/script.js"></script>
-</body>
+    <div class="options" id="options-container">
+      <!-- Les options seront injectées ici par JavaScript -->
+    </div>
+
+   
+    <div class="button-container">
+      <button id="next-button">Suivant</button>
+    </div>
+  </div>
+  
+  <!-- Importe ici ton fichier JavaScript -->
+  <script type="module" src="game.js"></script>
+  
+<body>
 </html>

@@ -1,20 +1,45 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Bon réflexe pour éviter les surprises de padding */
 }
 
-body{
-    width: 100vh;
-    
-    
+body {
+  width: 100vw;       /* largeur = largeur de l’écran */
+  min-height: 100vh;  /* au moins la hauteur totale de la fenêtre */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
 }
-
-
 
 #photo_accueil {
-  background-color: rgb(227, 221, 222);
+  background-color: rgb(248, 248, 241);
+  text-align: center;
+  padding: 20px;
 }
 
 #photo_accueil img {
   width: 100%;
+  max-width: 800px; /* empêche l’image de s’étirer trop sur grand écran */
+  height: auto;
+  border-radius: 12px;
+}
+
+#photo_accueil h1 {
+  font-size: 1.6rem;
+  margin: 20px 0;
+  color: #333;
+}
+
+#photo_accueil button {
+  background-color: #d3ca16;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#photo_accueil button:hover {
+  background-color: rgb(126, 202, 127);
 }

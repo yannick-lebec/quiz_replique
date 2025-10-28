@@ -32,6 +32,7 @@ let currentQuestionIndex = 0; // Commence à la première question
 const question = document.getElementById("question-text");
 const options = document.getElementById("options-container");
 const boutonSuivant = document.getElementById('next-button');
+const boutonRejouer = document.getElementById('replay-button');
 
 // Fonction pour afficher une question basée sur l'index actuel
 function loadQuestion() {
@@ -67,8 +68,27 @@ boutonSuivant.addEventListener('click', () => {
     question.innerText = 'Le quiz est fini !';
     options.innerHTML = ''; // Effacer les options
     boutonSuivant.style.display = 'none'; // Cacher le bouton Suivant
+    boutonRejouer.style.display = 'inline-block'
   }
 });
 
 // Charger la première question au chargement de la page
 loadQuestion(currentQuestionIndex);
+
+// ETAPE 6 :
+
+// Fonction pour réinitialiser le quiz
+boutonRejouer.addEventListener('click', () => {
+  // TODO Réinitialiser l'index 
+  currentQuestionIndex = 0 ;
+  //console.log(currentQuestionIndex)
+  
+  
+  // TODO Cacher le bouton Rejouer et afficher le bouton Suivant
+  boutonRejouer.style.display = 'none';
+  boutonSuivant.style.display = 'inline-block';
+  
+  // TODO Recharger la première question
+  loadQuestion(currentQuestionIndex)
+
+});

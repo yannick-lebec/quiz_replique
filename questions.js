@@ -3,44 +3,44 @@
 export const quiz_repliques = {
     question : [ 
         {
-        text : "Question 1",  //Question 1
+        text : "Et juste là, un petit...",  //Question 1
         options : [
-            "Réponse 1",
-            "Réponse 2",
-            "Réponse 3",
-            "Réponse 4"
+            "Rosier",
+            "Palmier",
+            "Pommier",
+            "Géranium"
         ],
-        correct_answer : "Réponse 1",
+        correct_answer : "Géranium",
         },
         {
-        text : "Question 2",  //Question 2
+        text : "Mais vous savez, moi je crois pas qu'il y ait...",  //Question 2
         options : [
-            "Réponse 1",
-            "Réponse 2",
-            "Réponse 3",
-            "Réponse 4"
+            "De bonne ou de mauvaise situation",
+            "De problème insoluble",
+            "De hasard dans la vie",
+            "De sanglier en Egypte"
         ],
-        correct_answer : "Réponse 2",
+        correct_answer : "De bonne ou de mauvaise situation",
         },
         {
-        text : "Question 3",     //Question 3
+        text : "Pas de pierres, pas de construction. Pas de construction, pas de palais. Pas de palais...",     //Question 3
         options : [
-            "Réponse 1",
-            "Réponse 2",
-            "Réponse 3",
-            "Réponse 4"
+            "Pas de problème",
+            "Pas d'histoire",
+            "Pas de palais",
+            "Plus de César"
         ],
-        correct_answer : "Réponse 3",
+        correct_answer : "Pas de palais",
         },
         {
-        text : "Question 4",     //Question 4
+        text : "C'est trop calme...",     //Question 4
         options : [
-            "Réponse 1",
-            "Réponse 2",
-            "Réponse 3",
-            "Réponse 4"
+            "J'aime pas trop beaucoup ça",
+            "J'aime pas beaucoup trop ça",
+            "J'aime pas trop trop ça",
+            "J'aime trop pas ça"
         ],
-        correct_answer : "Réponse 4",
+        correct_answer : "J'aime pas trop beaucoup ça",
         },
     ]
 }

@@ -1,9 +1,38 @@
-// Dynamiser les questions
+// Lien avec un autre JS
+import { quiz_repliques } from "./questions.js"; // Import des questions
+
+// Pour Page d'Accueil
 const commencer = document.querySelector("#btn-commencer");
 const accueil = document.querySelector("#quiz_accueil");
 const quiz = document.querySelector("#quiz-container");
 
-let time = 15 //Pour le countdown
+// Pour les Questions
+const question = document.getElementById("question-text");
+const options = document.getElementById("options-container");
+const boutonSuivant = document.getElementById('next-button');
+const boutonRejouer = document.getElementById('replay-button');
+
+let currentQuestionIndex = 0; // Variables pour suivre l'état du quiz // Commence à la première question
+
+// Pour la barre de progression
+const progressBar = document.getElementById("progressBar");
+
+let currentBar = progressBar.value; 
+let maxBar = progressBar.max;
+const step = 25
+
+// Pour le timer
+const dialog = document.getElementById('timeUpDialog');
+const closeButton = document.getElementById('closeButton');
+const countDownID = document.getElementById("countDown");
+
+let time = 15;
+
+
+
+
+
+// Code Page d'Accueil
 
 commencer.addEventListener("click", () => {
   // cacher l’écran d’accueil
@@ -16,40 +45,12 @@ commencer.addEventListener("click", () => {
   setInterval (countdown, 1100)
 });
 
-const dialog = document.getElementById('timeUpDialog')
-const closeButton = document.getElementById('closeButton')
-
-function countdown (){
-                                 // Si mon time est supérieur ou égal à 0
-      const seconds = time < 10 ? '0' + time : time;         //et que  Si les secondes sont inférieures a 10, on rajoute 0 devant time
-      countDownID.innerHTML = `00 : ${seconds}`                 // Ajoute 00 devant mes secondes 
-       
-      if(seconds > 0){
-        time --
-      } else if (seconds === 0){
-        return false
-      } else if (time === 0){                                   // on décrémente -1 a mon time 
-        dialog.showModal()
-      }
-
-}
-
-import { quiz_repliques } from "./questions.js"; // Import des questions
 
 
-// Variables pour suivre l'état du quiz
-let currentQuestionIndex = 0; // Commence à la première question
-
-// Sélection des éléments HTML
-const question = document.getElementById("question-text");
-const options = document.getElementById("options-container");
-const boutonSuivant = document.getElementById('next-button');
-const boutonRejouer = document.getElementById('replay-button');
-const progressBar = document.getElementById("progressBar");
-const countDownID = document.getElementById("countDown");
 
 
 // Fonction pour afficher une question basée sur l'index actuel
+
 function loadQuestion() {
   // Vider le conteneur des options
   options.innerHTML = '';
@@ -71,11 +72,33 @@ function loadQuestion() {
   });
 }
 
-let currentBar = progressBar.value;
-let maxBar = progressBar.max;
-const step = 25
 
-// Ajouter un écouteur d'événements pour le bouton "Suivant"
+
+
+
+// Fonction pour le Timer
+
+function countdown (){
+                                                            // Si mon time est supérieur ou égal à 0
+      const seconds = time < 10 ? '0' + time : time;        //et que  Si les secondes sont inférieures a 10, on rajoute 0 devant time
+      countDownID.innerHTML = `00 : ${seconds}`             // Ajoute 00 devant mes secondes 
+       
+      if(seconds > 0){
+        time --
+      } else if (seconds === 0){
+        return false
+      } else if (time === 0){                               // on décrémente -1 a mon time 
+        dialog.showModal()
+      }
+
+}
+
+
+
+
+
+// Fonction pour le bouton Suivant
+
 boutonSuivant.addEventListener('click', () => {
 
   // Incrémenter l'index de la question
@@ -107,8 +130,13 @@ boutonSuivant.addEventListener('click', () => {
   }
 });
 
-// Charger la première question au chargement de la page
-loadQuestion(currentQuestionIndex);
+loadQuestion(currentQuestionIndex); // Charger la première question au chargement de la page
+
+
+
+
+
+// Fonction pour fermer le message du Timer
 
 closeButton.addEventListener('click', () => {
   dialog.close()
@@ -141,9 +169,12 @@ closeButton.addEventListener('click', () => {
   }
 });
 
-// ETAPE 6 :
+
+
+
 
 // Fonction pour réinitialiser le quiz
+
 boutonRejouer.addEventListener('click', () => {
   // TODO Réinitialiser l'index 
   currentQuestionIndex = 0 ;
@@ -164,6 +195,12 @@ boutonRejouer.addEventListener('click', () => {
   loadQuestion(currentQuestionIndex)
 
 });
+
+
+
+
+
+// Fonction pour verifier les réponses
 
 function checkAnswer(clickedButton, selectedOption, correctAnswer) {
   const allButtons = options.querySelectorAll("button");
@@ -189,10 +226,3 @@ function checkAnswer(clickedButton, selectedOption, correctAnswer) {
     });
   }
 }
-
-
-
-
-
-
-  

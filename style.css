@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+#photo_accueil {
+  background-color: rgb(248, 248, 241);
+  text-align: center;
+  padding: 20px;
+  margin: 100px;
+}
+
+#photo_accueil img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+}
+
+#title_accueil {
+  font-size: 1.6rem;
+  margin: 20px 0;
+  color: #333;
+}
+
+#btn-commencer {
+  background-color: #d3ca16;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#btn-commencer:hover {
+  background-color: rgb(126, 202, 127);
+}

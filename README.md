@@ -31,3 +31,41 @@
 	</div>
 </body>
 </html>
+
+
+
+Question: 
+Et juste là, un petit...
+
+Réponse:
+Rosier
+Palmier
+Pommier
+Géranium
+
+Question :
+Mais vous savez, moi je crois pas qu'il y ait...
+
+Réponse:
+De bonne ou de mauvaise situation (bonne réponse)
+De problème insoluble
+De hasard dans la vie
+De sanglier en Egypte
+
+Question:
+Pas de pierres, pas de construction. Pas de construction, pas de palais. Pas de palais...
+
+Réponse:
+Pas de problème
+Pas d'histoire
+Pas de palais (Bonne réponse)
+Plus de César
+
+Question:
+C'est trop calme...
+
+Réponse: 
+J'aime pas trop beaucoup ça (Bonne réponse)
+J'aime pas beaucoup trop ça
+J'aime pas trop trop ça
+J'aime trop pas ça

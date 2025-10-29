@@ -27,6 +27,7 @@ const closeButton = document.getElementById('closeButton');
 const countDownID = document.getElementById("countDown");
 
 let time = 15;
+let timerInterval
 
 
 
@@ -42,7 +43,8 @@ commencer.addEventListener("click", () => {
   quiz.hidden = false;
 
   // On commence le timer
-  setInterval (countdown, 1100)
+  clearInterval(timerInterval)
+  timerInterval = setInterval (countdown, 1100)
 });
 
 
@@ -69,12 +71,20 @@ function loadQuestion() {
     const option_btn = document.createElement('button');
     option_btn.innerText = option;
     option_btn.addEventListener("click", () =>{
+        clearInterval(timerInterval)
       checkAnswer(option_btn, option, currentQuestion.correct_answer);
         // Le bonton suivant est réactivé
         boutonSuivant.disabled = false;
     });
     options.appendChild(option_btn);
   });
+  if (currentQuestionIndex > 0){
+    time = 15;
+    clearInterval(timerInterval); // on s’assure d’arrêter l’ancien timer
+    timerInterval = setInterval(countdown, 1000);
+  } else if (currentQuestion === 0){
+    time = 15
+  }
 }
 
 
@@ -90,9 +100,8 @@ function countdown (){
        
       if(seconds > 0){
         time --
-      } else if (seconds === 0){
-        return false
-      } else if (time === 0){                               // on décrémente -1 a mon time 
+      } else{
+        clearInterval(timerInterval)                              // on décrémente -1 a mon time 
         dialog.showModal()
       }
 
@@ -125,6 +134,8 @@ boutonSuivant.addEventListener('click', () => {
     boutonRejouer.style.display = 'inline-block'
     dialog.style.display = 'none'
     countDownID.style.display = 'none'
+    clearInterval(timerInterval)
+    time = 15
   }
 
   if (currentBar < maxBar){                             // Si ma valeur de départ est inférieur à ma valeur maximum
@@ -186,7 +197,9 @@ boutonRejouer.addEventListener('click', () => {
   //console.log(currentQuestionIndex)
 
   time = 15
-  countdown()
+  clearInterval(timerInterval); // on s’assure d’arrêter l’ancien timer
+  timerInterval = setInterval(countdown, 1000);
+  
   
   
   // TODO Cacher le bouton Rejouer et afficher le bouton Suivant

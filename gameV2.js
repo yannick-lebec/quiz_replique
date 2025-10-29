@@ -132,7 +132,6 @@ boutonSuivant.addEventListener('click', () => {
     boutonSuivant.style.display = 'none'; // Cacher le bouton Suivant
     //progressBar.style.display = 'none'
     boutonRejouer.style.display = 'inline-block'
-    dialog.style.display = 'none'
     countDownID.style.display = 'none'
     clearInterval(timerInterval)
     time = 15

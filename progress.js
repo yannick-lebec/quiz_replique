@@ -3,8 +3,8 @@ let button = document.getElementById("boutonSuivant")
 
 
 
-let currentBar = 0;
-let maxBar = 100;
+let currentBar = progressBar.value;
+let maxBar = progressBar.max;
 const step = 25
 
   const progressBar = document.getElementById("progressBar");

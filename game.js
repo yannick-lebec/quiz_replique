@@ -59,14 +59,19 @@ function loadQuestion() {
 
   // Injecter la question dans le HTML
   question.innerText = currentQuestion.text;
+  // Le bouton suivant est désactivé
+  boutonSuivant.disabled = true;
 
   // Injecter les options dans le HTML 
   currentQuestion.options.forEach(option => {
     const option_btn = document.createElement('button');
     option_btn.innerText = option;
-    option_btn.addEventListener("click", () =>
-      checkAnswer(option_btn, option, currentQuestion.correct_answer)
-    );
+
+    option_btn.addEventListener("click", () => {
+      checkAnswer(option_btn, option, currentQuestion.correct_answer);
+    // Le bonton suivant est réactivé
+    boutonSuivant.disabled = false;
+    });
     options.appendChild(option_btn);
   });
 }
@@ -189,10 +194,6 @@ function checkAnswer(clickedButton, selectedOption, correctAnswer) {
     });
   }
 }
-
-
-
-
 
 
   

@@ -31,37 +31,33 @@ function countdown (){
 import { quiz_repliques } from "./questions.js"; // Import des questions
 
 
-
 // Variables pour suivre l'état du quiz
 let currentQuestionIndex = 0; // Commence à la première question
 
 // Sélection des éléments HTML
 const question = document.getElementById("question-text");
 const options = document.getElementById("options-container");
-
 const boutonSuivant = document.getElementById('next-button');
 const boutonRejouer = document.getElementById('replay-button');
 const progressBar = document.getElementById("progressBar");
 const countDownID = document.getElementById("countDown");
 
 
-
 // Fonction pour afficher une question basée sur l'index actuel
 function loadQuestion() {
   // Vider le conteneur des options
-  options.innerHTML = "";
+  options.innerHTML = '';
 
   // Récupérer la question actuelle
   const currentQuestion = quiz_repliques.question[currentQuestionIndex];
 
-  // Injecter la question
+  // Injecter la question dans le HTML
   question.innerText = currentQuestion.text;
 
-  // Créer les boutons pour chaque option
-  currentQuestion.options.forEach((option) => {
-    const option_btn = document.createElement("button");
+  // Injecter les options dans le HTML 
+  currentQuestion.options.forEach(option => {
+    const option_btn = document.createElement('button');
     option_btn.innerText = option;
-    // s
     option_btn.addEventListener("click", () =>
       checkAnswer(option_btn, option, currentQuestion.correct_answer)
     );
@@ -74,7 +70,7 @@ let maxBar = progressBar.max;
 const step = 25
 
 // Ajouter un écouteur d'événements pour le bouton "Suivant"
-boutonSuivant.addEventListener("click", () => {
+boutonSuivant.addEventListener('click', () => {
   // Incrémenter l'index de la question
   currentQuestionIndex++;
 
@@ -86,7 +82,6 @@ boutonSuivant.addEventListener("click", () => {
     countdown()
    } else {
     // Si plus de questions, indiquer la fin du quiz
-
     question.innerText = 'Le quiz est fini !';
     options.innerHTML = ''; // Effacer les options
     boutonSuivant.style.display = 'none'; // Cacher le bouton Suivant
@@ -101,7 +96,6 @@ boutonSuivant.addEventListener("click", () => {
       if (currentBar > maxBar){
         currentBar = maxBar      //Si le nouvel ajout fait passer currentBar au-delà de maxBar, on la remet exactement à maxBar.
         }
-
   }
 });
 
@@ -111,18 +105,25 @@ loadQuestion(currentQuestionIndex);
 // ETAPE 6 :
 
 // Fonction pour réinitialiser le quiz
-boutonRejouer.addEventListener("click", () => {
-  // TODO Réinitialiser l'index
-  currentQuestionIndex = 0;
+boutonRejouer.addEventListener('click', () => {
+  // TODO Réinitialiser l'index 
+  currentQuestionIndex = 0 ;
   //console.log(currentQuestionIndex)
 
-
+  time = 15
+  countdown()
+  
+  
   // TODO Cacher le bouton Rejouer et afficher le bouton Suivant
-  boutonRejouer.style.display = "none";
-  boutonSuivant.style.display = "inline-block";
-
+  boutonRejouer.style.display = 'none';
+  boutonSuivant.style.display = 'inline-block';
+  progressBar.style.display = 'inline-block';
+  progressBar.value = 0
+  countDownID.style.display = 'inline-block'
+  
   // TODO Recharger la première question
-  loadQuestion(currentQuestionIndex);
+  loadQuestion(currentQuestionIndex)
+
 });
 
 function checkAnswer(clickedButton, selectedOption, correctAnswer) {
@@ -151,26 +152,8 @@ function checkAnswer(clickedButton, selectedOption, correctAnswer) {
 }
 
 
-  time = 15
-  countdown()
-  
-  
-  // TODO Cacher le bouton Rejouer et afficher le bouton Suivant
-  boutonRejouer.style.display = 'none';
-  boutonSuivant.style.display = 'inline-block';
-  progressBar.style.display = 'inline-block';
-  progressBar.value = 0
-  countDownID.style.display = 'inline-block'
-  
-  // TODO Recharger la première question
-  loadQuestion(currentQuestionIndex)
-
-
-
-
 
 
 
 
   
-

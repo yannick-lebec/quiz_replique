@@ -3,8 +3,8 @@ let button = document.getElementById("boutonSuivant")
 
 
 
-let currentBar = 0;
-let maxBar = 100;
+let currentBar = progressBar.value;
+let maxBar = progressBar.max;
 const step = 25
 
   const progressBar = document.getElementById("progressBar");
@@ -32,4 +32,21 @@ const step = 25
   });
     
 
+  let time = 10
   
+  const countDownID = document.getElementById("countDown")
+  
+  setInterval (countdown, 1000)
+  
+  function countdown (){
+                                        // Si mon time est supérieur ou égal à 0
+      const seconds = time < 10 ? '0' + time : time;         //et que  Si les secondes sont inférieures a 10, on rajoute 0 devant time
+      countDownID.innerHTML = `00 : ${seconds}`                 // Ajoute 00 devant mes secondes 
+       
+      if(seconds > 0){
+        time --
+      } else if (seconds === 0){
+        return false
+      }                                       // on décrémente -1 a mon time 
+    }
+countdown (time)

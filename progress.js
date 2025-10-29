@@ -1,4 +1,9 @@
 
+
+// ProgressBar
+
+
+
 let button = document.getElementById("boutonSuivant")
 
 
@@ -32,6 +37,8 @@ const step = 25
   });
     
 
+  // Timer 
+
   let time = 10
   
   const countDownID = document.getElementById("countDown")
@@ -50,3 +57,4 @@ const step = 25
       }                                       // on décrémente -1 a mon time 
     }
 countdown (time)
+

@@ -1,29 +1,35 @@
 // Dynamiser les questions
+const commencer = document.querySelector("#btn-commencer");
+const accueil = document.querySelector("#quiz_accueil");
+const quiz = document.querySelector("#quiz-container");
+
+let time = 15 //Pour le countdown
+
+commencer.addEventListener("click", () => {
+  // cacher l’écran d’accueil
+  accueil.hidden = true;
+  
+  // afficher le quiz
+  quiz.hidden = false;
+
+  // On commence le timer
+  setInterval (countdown, 1100)
+});
+
+function countdown (){
+                                 // Si mon time est supérieur ou égal à 0
+      const seconds = time < 10 ? '0' + time : time;         //et que  Si les secondes sont inférieures a 10, on rajoute 0 devant time
+      countDownID.innerHTML = `00 : ${seconds}`                 // Ajoute 00 devant mes secondes 
+       
+      if(seconds > 0){
+        time --
+      } else if (seconds === 0){
+        return false
+      }                                       // on décrémente -1 a mon time 
+    }
 
 import { quiz_repliques } from "./questions.js"; // Import des questions
 
-// //Récupérer les emplacements pour injecter la question et les options
-// const question = document.getElementById("question-text")
-// //console.log(question)
-// const options = document.getElementById("options-container")
-
-
-// //Récuperer la première question
-// const firstQuestion = quiz_repliques.question[0];
-
-// // Injecter le texte de la question dans l'emplacement dédié
-// question.innerText = firstQuestion.text;
-
-// // Pour chaque option, créer un bouton et l'ajouter au conteneur
-// firstQuestion.options.forEach(option => {
-//     const option_btn = document.createElement('button');
-//     option_btn.innerText = option;
-//     options.classList.add('options')
-//     options.appendChild(option_btn)
-// }
-// ) ;
-
-//ETAPE 5
 
 // Variables pour suivre l'état du quiz
 let currentQuestionIndex = 0; // Commence à la première question
@@ -34,6 +40,8 @@ const options = document.getElementById("options-container");
 const boutonSuivant = document.getElementById('next-button');
 const boutonRejouer = document.getElementById('replay-button');
 const progressBar = document.getElementById("progressBar");
+const countDownID = document.getElementById("countDown");
+
 
 // Fonction pour afficher une question basée sur l'index actuel
 function loadQuestion() {
@@ -68,6 +76,8 @@ boutonSuivant.addEventListener('click', () => {
   if (currentQuestionIndex < quiz_repliques.question.length) {
     // Afficher la question suivante
     loadQuestion();
+    time = 15
+    countdown()
    } else {
     // Si plus de questions, indiquer la fin du quiz
     question.innerText = 'Le quiz est fini !';
@@ -75,6 +85,8 @@ boutonSuivant.addEventListener('click', () => {
     boutonSuivant.style.display = 'none'; // Cacher le bouton Suivant
     //progressBar.style.display = 'none'
     boutonRejouer.style.display = 'inline-block'
+    time = 0
+    countDownID.style.display = 'none'
   }
 
   if (currentBar < maxBar){                             // Si ma valeur de départ est inférieur à ma valeur maximum
@@ -96,7 +108,8 @@ boutonRejouer.addEventListener('click', () => {
   currentQuestionIndex = 0 ;
   //console.log(currentQuestionIndex)
 
-
+  time = 15
+  countdown()
   
   
   // TODO Cacher le bouton Rejouer et afficher le bouton Suivant
@@ -104,6 +117,7 @@ boutonRejouer.addEventListener('click', () => {
   boutonSuivant.style.display = 'inline-block';
   progressBar.style.display = 'inline-block';
   progressBar.value = 0
+  countDownID.style.display = 'inline-block'
   
   // TODO Recharger la première question
   loadQuestion(currentQuestionIndex)

@@ -22,7 +22,7 @@ const progressBar = document.getElementById("progressBar");
 
 let currentBar = progressBar.value;
 let maxBar = progressBar.max;
-const step = 25;
+const step = maxBar / quiz_repliques.question.length
 
 // Pour le timer
 const dialog = document.getElementById("timeUpDialog");

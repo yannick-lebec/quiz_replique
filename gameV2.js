@@ -8,6 +8,7 @@ const quiz = document.querySelector("#quiz-container");
 
 // Pour les Questions
 const questionImage = document.getElementById("question-image");
+const imageContainer = document.getElementById("image-container")
 const question = document.getElementById("question-text");
 const options = document.getElementById("options-container");
 const boutonSuivant = document.getElementById("next-button");
@@ -66,13 +67,10 @@ function loadQuestion() {
   question.innerText = currentQuestion.text;
 
   // Injecte l'image si la question est chargé
-  if (currentQuestion.images) {
     questionImage.src = currentQuestion.images;
     questionImage.alt = `Illustration – ${currentQuestion.text}`;
-    questionImage.hidden = false;
-  } else {
-    questionImage.hidden = true;
-  }
+    imageContainer.hidden = false;
+  
 
   // Le bouton suivant est désactivé
   boutonSuivant.disabled = true;
@@ -134,11 +132,12 @@ boutonSuivant.addEventListener("click", () => {
     options.innerHTML = ""; // Effacer les options
     boutonSuivant.style.display = "none"; // Cacher le bouton Suivant
     //progressBar.style.display = 'none'
-    boutonRejouer.style.display = "inline-block";
-    countDownID.style.display = "none";
-    clearInterval(timerInterval);
-    time = 15;
-    name.hidden = false;
+    boutonRejouer.style.display = 'inline-block'
+    countDownID.style.display = 'none'
+    clearInterval(timerInterval)
+    time = 15
+    name.hidden = false
+    imageContainer.hidden = true
   }
 
   if (currentBar < maxBar) {

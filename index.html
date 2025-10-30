@@ -22,6 +22,8 @@
     </div>
 
   <div id="quiz-container" hidden>
+
+    <img id="question-image" alt="Illustration de la question" hidden>
    
     <div class="question" id="question-text">
       <!-- La question sera injectée ici par JavaScript -->
@@ -36,6 +38,10 @@
     <div class="button-container">
       <button id="next-button">Suivant</button>
       <button id="replay-button" style="display: none;">Rejouer</button> 
+    </div>
+
+    <div id="scoreFinal">
+      <p>Score : 0</p>
     </div>
 
 
@@ -53,11 +59,19 @@
           </dialog>
       </div>
     </div>
+
+    <!--Pour enregistrer son Score-->
+    <div id = "name-container"> 
+      <p>Tu as envie d'enregistrer ton score final ?</p><br>
+      <p>Ecrit ton prénom puis appuie sur le bouton ! </p> <br>
+      <input type="text" placeholder="Prénom"><button id = "nameButton">Envoyer</button></input>
+    </div>
     
-  
+  </div>
   <!-- Importe ici ton fichier JavaScript -->
   <script type="module" src="gameV2.js"></script>
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   
 <body>
 </html>

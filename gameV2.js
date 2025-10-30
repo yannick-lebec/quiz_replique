@@ -13,6 +13,7 @@ const question = document.getElementById("question-text");
 const options = document.getElementById("options-container");
 const boutonSuivant = document.getElementById("next-button");
 const boutonRejouer = document.getElementById("replay-button");
+const boutonAutreQuiz = document.getElementById("otherQuiz-button");
 
 let currentQuestionIndex = 0; // Variables pour suivre l'état du quiz // Commence à la première question
 
@@ -21,7 +22,7 @@ const progressBar = document.getElementById("progressBar");
 
 let currentBar = progressBar.value;
 let maxBar = progressBar.max;
-const step = 25;
+const step = maxBar / quiz_repliques.question.length
 
 // Pour le timer
 const dialog = document.getElementById("timeUpDialog");
@@ -36,6 +37,8 @@ const name = document.getElementById("name-container");
 const nameButton = document.getElementById("nameButton");
 const inputID = document.getElementById("inputID");
 const scoreFinal = document.getElementById("scoreFinal");
+
+let maxScore = quiz_repliques.question.length
 
 let score = 0;
 
@@ -56,6 +59,8 @@ commencer.addEventListener("click", () => {
 
   // afficher le quiz
   quiz.hidden = false;
+  // cache le bouton autre quiz
+  boutonAutreQuiz.style.display = "none";
 
   // On commence le timer
   clearInterval(timerInterval);
@@ -125,8 +130,16 @@ function countdown() {
 }
 
 // Fonction pour le bouton Suivant
+ 
+
 
 boutonSuivant.addEventListener("click", () => {
+  if (score === maxScore){
+    confetti({
+  particleCount: 100,
+  spread: 70,
+  origin: { x: 0.5, y: 0.5 }
+})};
   // Incrémenter l'index de la question
 
   currentQuestionIndex++;
@@ -143,8 +156,9 @@ boutonSuivant.addEventListener("click", () => {
     options.innerHTML = ""; // Effacer les options
     boutonSuivant.style.display = "none"; // Cacher le bouton Suivant
     //progressBar.style.display = 'none'
-    boutonRejouer.style.display = 'inline-block'
-    countDownID.style.display = 'none'
+    boutonRejouer.style.display = 'inline-block';
+    boutonAutreQuiz.style.display = "inline-block";
+    countDownID.style.display = 'none';
     clearInterval(timerInterval)
     time = 15
     name.hidden = false
@@ -183,6 +197,7 @@ closeButton.addEventListener("click", () => {
     boutonSuivant.style.display = "none"; // Cacher le bouton Suivant
     //progressBar.style.display = 'none'
     boutonRejouer.style.display = "inline-block";
+    boutonAutreQuiz.style.display = "inline-block";
     dialog.style.display = "none";
     countDownID.style.display = "none";
   }
@@ -208,6 +223,7 @@ boutonRejouer.addEventListener("click", () => {
   timerInterval = setInterval(countdown, 1000);
 
   // TODO Cacher le bouton Rejouer et afficher le bouton Suivant
+  boutonAutreQuiz.style.display = "none";
   boutonRejouer.style.display = "none";
   boutonSuivant.style.display = "inline-block";
   progressBar.style.display = "inline-block";
@@ -219,7 +235,7 @@ boutonRejouer.addEventListener("click", () => {
 
   //Réinisialisation du score à zéro
   score = 0;
-  scoreFinal.innerHTML = score;
+  scoreFinal.innerHTML = `Score : ${score}`;
 });
 
 // Fonction pour verifier les réponses
@@ -235,7 +251,7 @@ function checkAnswer(clickedButton, selectedOption, correctAnswer) {
     clickedButton.style.backgroundColor = "green";
     clickedButton.style.color = "white";
     score++;
-    scoreFinal.innerHTML = score;
+    scoreFinal.innerHTML = `Score : ${score}`;
   } else {
     // Affiche la mauvaise réponse en rouge
     clickedButton.style.backgroundColor = "red";
@@ -283,4 +299,8 @@ function showLeaderboard(leaderboard){
 
 boutonClassement.addEventListener ("click", () => {
     classementDialog.close()
+})
+
+boutonAutreQuiz.addEventListener("click", () => {
+  window.location.href = "https://www.quizz.biz"
 });

@@ -29,6 +29,10 @@ const countDownID = document.getElementById("countDown");
 let time = 15;
 let timerInterval
 
+// Pour le score
+const name = document.getElementById("name-container")
+const nameButton = document.getElementById("nameButton")
+
 
 
 
@@ -45,6 +49,9 @@ commencer.addEventListener("click", () => {
   // On commence le timer
   clearInterval(timerInterval)
   timerInterval = setInterval (countdown, 1100)
+  
+  // Pour cacher le name
+  name.hidden = true
 });
 
 
@@ -85,6 +92,8 @@ function loadQuestion() {
   } else if (currentQuestion === 0){
     time = 15
   }
+
+  name.hidden = true
 }
 
 
@@ -135,6 +144,7 @@ boutonSuivant.addEventListener('click', () => {
     countDownID.style.display = 'none'
     clearInterval(timerInterval)
     time = 15
+    name.hidden = false
   }
 
   if (currentBar < maxBar){                             // Si ma valeur de départ est inférieur à ma valeur maximum

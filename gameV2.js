@@ -35,6 +35,7 @@ let timerInterval;
 const name = document.getElementById("name-container");
 const nameButton = document.getElementById("nameButton");
 const scoreFinal = document.getElementById("scoreFinal");
+let maxScore = quiz_repliques.question.length
 let score = 0;
 
 // Code Page d'Accueil
@@ -114,8 +115,16 @@ function countdown() {
 }
 
 // Fonction pour le bouton Suivant
+ 
+
 
 boutonSuivant.addEventListener("click", () => {
+  if (score === maxScore){
+    confetti({
+  particleCount: 100,
+  spread: 70,
+  origin: { x: 0.5, y: 0.5 }
+})};
   // Incrémenter l'index de la question
 
   currentQuestionIndex++;

@@ -11,6 +11,7 @@ export const quiz_repliques = {
             "Géranium"
         ],
         correct_answer : "Géranium",
+        images : "/images/photo_question1.png",
         },
         {
         text : "Mais vous savez, moi je crois pas qu'il y ait...",  //Question 2
@@ -21,6 +22,7 @@ export const quiz_repliques = {
             "De sanglier en Egypte"
         ],
         correct_answer : "De bonne ou de mauvaise situation",
+        images : "/images/photo_question2.png",
         },
         {
         text : "Pas de pierres, pas de construction. Pas de construction, pas de palais. Pas de palais...",     //Question 3
@@ -31,6 +33,7 @@ export const quiz_repliques = {
             "Plus de César"
         ],
         correct_answer : "Pas de palais",
+        images : "/images/photo_question3.png"
         },
         {
         text : "C'est trop calme...",     //Question 4
@@ -41,6 +44,7 @@ export const quiz_repliques = {
             "J'aime trop pas ça"
         ],
         correct_answer : "J'aime pas trop beaucoup ça",
+        images : "/images/photo_question4.png"
         },
     ]
 }

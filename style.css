@@ -45,3 +45,11 @@ body {
   background-color: rgb(126, 202, 127);
   
 }
+
+#question-image{
+  display:block;
+  width: 80%;
+  margin: 16px auto 12px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}

@@ -7,6 +7,7 @@ const accueil = document.querySelector("#quiz_accueil");
 const quiz = document.querySelector("#quiz-container");
 
 // Pour les Questions
+const questionImage = document.getElementById("question-image");
 const question = document.getElementById("question-text");
 const options = document.getElementById("options-container");
 const boutonSuivant = document.getElementById("next-button");
@@ -30,6 +31,8 @@ let time = 15;
 let timerInterval;
 
 // Pour le score
+const name = document.getElementById("name-container");
+const nameButton = document.getElementById("nameButton");
 const scoreFinal = document.getElementById("scoreFinal");
 let score = 0;
 
@@ -45,6 +48,9 @@ commencer.addEventListener("click", () => {
   // On commence le timer
   clearInterval(timerInterval);
   timerInterval = setInterval(countdown, 1100);
+
+  // Pour cacher le name
+  name.hidden = true;
 });
 
 // Fonction pour afficher une question basée sur l'index actuel
@@ -58,6 +64,15 @@ function loadQuestion() {
 
   // Injecter la question dans le HTML
   question.innerText = currentQuestion.text;
+
+  // Injecte l'image si la question est chargé
+  if (currentQuestion.images) {
+    questionImage.src = currentQuestion.images;
+    questionImage.alt = `Illustration – ${currentQuestion.text}`;
+    questionImage.hidden = false;
+  } else {
+    questionImage.hidden = true;
+  }
 
   // Le bouton suivant est désactivé
   boutonSuivant.disabled = true;
@@ -81,6 +96,8 @@ function loadQuestion() {
   } else if (currentQuestion === 0) {
     time = 15;
   }
+
+  name.hidden = true;
 }
 
 // Fonction pour le Timer
@@ -121,6 +138,7 @@ boutonSuivant.addEventListener("click", () => {
     countDownID.style.display = "none";
     clearInterval(timerInterval);
     time = 15;
+    name.hidden = false;
   }
 
   if (currentBar < maxBar) {

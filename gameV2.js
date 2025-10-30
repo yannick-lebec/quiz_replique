@@ -13,6 +13,7 @@ const question = document.getElementById("question-text");
 const options = document.getElementById("options-container");
 const boutonSuivant = document.getElementById("next-button");
 const boutonRejouer = document.getElementById("replay-button");
+const boutonAutreQuiz = document.getElementById("otherQuiz-button");
 
 let currentQuestionIndex = 0; // Variables pour suivre l'état du quiz // Commence à la première question
 
@@ -45,6 +46,8 @@ commencer.addEventListener("click", () => {
 
   // afficher le quiz
   quiz.hidden = false;
+  // cache le bouton autre quiz
+  boutonAutreQuiz.style.display = "none";
 
   // On commence le timer
   clearInterval(timerInterval);
@@ -132,8 +135,9 @@ boutonSuivant.addEventListener("click", () => {
     options.innerHTML = ""; // Effacer les options
     boutonSuivant.style.display = "none"; // Cacher le bouton Suivant
     //progressBar.style.display = 'none'
-    boutonRejouer.style.display = 'inline-block'
-    countDownID.style.display = 'none'
+    boutonRejouer.style.display = 'inline-block';
+    boutonAutreQuiz.style.display = "inline-block";
+    countDownID.style.display = 'none';
     clearInterval(timerInterval)
     time = 15
     name.hidden = false
@@ -172,6 +176,7 @@ closeButton.addEventListener("click", () => {
     boutonSuivant.style.display = "none"; // Cacher le bouton Suivant
     //progressBar.style.display = 'none'
     boutonRejouer.style.display = "inline-block";
+    boutonAutreQuiz.style.display = "inline-block";
     dialog.style.display = "none";
     countDownID.style.display = "none";
   }
@@ -197,6 +202,7 @@ boutonRejouer.addEventListener("click", () => {
   timerInterval = setInterval(countdown, 1000);
 
   // TODO Cacher le bouton Rejouer et afficher le bouton Suivant
+  boutonAutreQuiz.style.display = "none";
   boutonRejouer.style.display = "none";
   boutonSuivant.style.display = "inline-block";
   progressBar.style.display = "inline-block";
@@ -239,3 +245,7 @@ function checkAnswer(clickedButton, selectedOption, correctAnswer) {
     });
   }
 }
+
+boutonAutreQuiz.addEventListener("click", () => {
+  window.location.href = "https://www.quizz.biz"
+});

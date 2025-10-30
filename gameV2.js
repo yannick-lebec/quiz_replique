@@ -209,7 +209,7 @@ boutonRejouer.addEventListener("click", () => {
 
   //Réinisialisation du score à zéro
   score = 0;
-  scoreFinal.innerHTML = score;
+  scoreFinal.innerHTML = `Score : ${score}`;
 });
 
 // Fonction pour verifier les réponses
@@ -225,7 +225,7 @@ function checkAnswer(clickedButton, selectedOption, correctAnswer) {
     clickedButton.style.backgroundColor = "green";
     clickedButton.style.color = "white";
     score++;
-    scoreFinal.innerHTML = score;
+    scoreFinal.innerHTML = `Score : ${score}`;
   } else {
     // Affiche la mauvaise réponse en rouge
     clickedButton.style.backgroundColor = "red";

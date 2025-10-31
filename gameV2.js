@@ -28,6 +28,7 @@ const step = maxBar / quiz_repliques.question.length
 const dialog = document.getElementById("timeUpDialog");
 const closeButton = document.getElementById("closeButton");
 const countDownID = document.getElementById("countDown");
+const bonneReponse = document.getElementById("bonneReponse")
 
 let time = 15;
 let timerInterval;
@@ -48,7 +49,6 @@ const classementList = document.getElementById("classementList");
 const boutonClassement = document.getElementById("boutonClassement");
 
 let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || []; // Récupère l'ancien classement depuis localStorage
-
 
 
 // Code Page d'Accueil
@@ -126,8 +126,8 @@ function countdown() {
   } else {
     clearInterval(timerInterval); // on décrémente -1 a mon time
     dialog.showModal();
-  }
-}
+    bonneReponse.innerText = `La bonne réponse est : \n ${quiz_repliques.question[currentQuestionIndex].correct_answer}`
+}}
 
 // Fonction pour le bouton Suivant
  

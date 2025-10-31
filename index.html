@@ -58,7 +58,8 @@
       <p id="countDown"></p>
       <div id = "alert-container">
           <dialog id="timeUpDialog">
-          <p>TEMPS ÉCOULÉ</p>
+          <p>TEMPS ÉCOULÉ</p> <br>
+          <p id = "bonneReponse"></p>
           <button id="closeButton">Suivant</button>
           </dialog>
       </div>
@@ -68,10 +69,21 @@
     <div id = "name-container"> 
       <p>Tu as envie d'enregistrer ton score final ?</p><br>
       <p>Ecrit ton prénom puis appuie sur le bouton ! </p> <br>
-      <input type="text" placeholder="Prénom"><button id = "nameButton">Envoyer</button></input>
+      <input type="text" placeholder="Prénom" id = "inputID"><button id = "nameButton">Envoyer</button></input>
     </div>
     
   </div>
+
+
+  <!--Pour le Classement-->
+  
+    <dialog id = "classementDialog">
+    <h2 id = "titreClassement"> Classement</h2>
+    <div id = "classementList"></div>
+    <button id = "boutonClassement">Fermer</button>
+    </dialog>
+  
+
   <!-- Importe ici ton fichier JavaScript -->
   <script type="module" src="gameV2.js"></script>
   <script src="script.js"></script>

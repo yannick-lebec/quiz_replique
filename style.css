@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   width: 100vw;
   min-height: 100vh;
@@ -31,21 +32,60 @@ body {
   color: #333;
 }
 
-#btn-commencer {
-  background-color: #d3ca16;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 1rem;
+.button-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 0 50px;
+}
+
+.button-wrapper::before,
+.button-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 140px;
+  height: 2px;
+  transform: translateY(-50%);
+  background: #333;
+  box-shadow: 0 0 6px rgba(159, 182, 255, 0.7);
+}
+
+.button-wrapper::before {
+  right: calc(100% - 50px);
+}
+
+.button-wrapper::after {
+  left: calc(100% - 50px);
+}
+
+.btn-commencer {
+  position: relative;
+  display: inline-block;
+  height: 56px;
+  padding: 0 28px;
+  min-width: 520px;
+  font-size: 16px;
+  color: #333;
+  letter-spacing: .3px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.4);
   cursor: pointer;
+  background: #d4cc5b;
+  border: 2px solid #333;
+  clip-path: polygon(6% 0%, 94% 0, 100% 50%, 94% 100%, 6% 100%, 0% 50%);
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.35),
+    inset 0 8px 18px rgba(255,255,255,.08),
+    inset 0 -8px 18px rgba(0,0,0,.35);
 }
 
-#btn-commencer:hover {
+.btn-commencer span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-commencer:hover {
   background-color: rgb(126, 202, 127);
-  
 }
-
 
 #question-image{
   display:block;
@@ -53,4 +93,17 @@ body {
   margin: 16px auto 12px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+
+#image-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .btn-commencer {
+    min-width: 90%;
+    padding: 0 20px;
+  }
 }

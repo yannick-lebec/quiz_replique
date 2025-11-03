@@ -247,19 +247,19 @@ function checkAnswer(clickedButton, selectedOption, correctAnswer) {
 
   if (selectedOption === correctAnswer) {
     // Affiche la bonne réponse en vert
-    clickedButton.style.backgroundColor = "green";
+    clickedButton.style.backgroundColor = "#27AE60";
     clickedButton.style.color = "white";
     score++;
     scoreFinal.innerHTML = `Score : ${score}`;
   } else {
     // Affiche la mauvaise réponse en rouge
-    clickedButton.style.backgroundColor = "red";
+    clickedButton.style.backgroundColor = "#C0392B";
     clickedButton.style.color = "white";
 
     // Si la mauvaise réponse est cliquer affiche la bonne réponse
     allButtons.forEach((btn) => {
       if (btn.innerText === correctAnswer) {
-        btn.style.backgroundColor = "green";
+        btn.style.backgroundColor = "#27AE60";
         btn.style.color = "white";
       }
     });

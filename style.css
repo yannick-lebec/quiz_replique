@@ -160,14 +160,50 @@ body {
 
 
   #countDown {
-    padding: 10px 20px;
-    border: 3px solid white;
-    border-radius: 75%;
+  padding: 10px 20px;
+  border: 3px solid white;
+  border-start-start-radius: 5rem;
+  border-start-end-radius: 5rem;
+  border-end-end-radius: 5rem;
+  border-end-start-radius: 5rem;
     color: black;
     display: inline-block;
     background-color: #C69867;
-  }
+   
   
+  }
+
+
+  #progressBar {
+
+  width: 400px;
+  height: 10px;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none; }
+
+  #progressBar::-webkit-progress-value {
+  background-color: #C69867; 
+  border-radius: 1
+}
+
+#scoreFinal {
+  height: 50px;
+  position: fixed; /* reste visible même quand on défile */
+  top: 02px;       /* distance du haut */
+  left: 30%;       /* centré horizontalement */
+  transform: translateX(-50%); /* recentre le bloc */
+  z-index: 9999;   /* reste au-dessus du reste de la page */
+  border: 1px solid #C69867;
+  background-color: #C69867;
+   border-radius: 4rem;
+   border: 1px solid #C69867;
+   padding: 10px 20px;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+
 
 @media (max-width: 600px) {
   .btn-commencer {

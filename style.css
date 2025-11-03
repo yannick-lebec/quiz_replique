@@ -152,29 +152,22 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
-<<<<<<< HEAD
-#countDown{
-  padding: 10px 20px; 
-  border: 3px solid yellow;    
-  border-radius: 75%;
-  color: yellow;
-  display: inline-block;    
-  background-color: rgb(25, 25, 105);
-}
-
-#progressBar{
- 
-color: #d3ca16;
-padding: 20px;
-border-color: #d3ca16;
-height: 100px;width: 50%;
-}
-=======
 #image-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
+
+
+  #countDown {
+    padding: 10px 20px;
+    border: 3px solid white;
+    border-radius: 75%;
+    color: black;
+    display: inline-block;
+    background-color: #C69867;
+  }
+  
 
 @media (max-width: 600px) {
   .btn-commencer {
@@ -182,15 +175,6 @@ height: 100px;width: 50%;
     padding: 0 20px;
   }
 
-  #countDown {
-    padding: 10px 20px;
-    border: 3px solid white;
-    border-radius: 75%;
-    color: white;
-    display: inline-block;
-    background-color: rgb(25, 25, 105);
-  }
-  
   .btn-commencer {
     max-width: 95%;
     font-size: 0.8rem;
@@ -198,4 +182,3 @@ height: 100px;width: 50%;
     clip-path: polygon(8% 0%, 92% 0, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
   }
 }
->>>>>>> 23c044503f83c895a45c7c292a4dc68abd5daa9d

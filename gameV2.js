@@ -102,7 +102,7 @@ function loadQuestion() {
   // Injecter les options dans le HTML
   currentQuestion.options.forEach((option) => {
     const option_btn = document.createElement("button");
-    option_btn.classList.add("btn-commencer");
+    option_btn.classList.add("bouton-reponse");
     option_btn.innerText = option;
     option_btn.addEventListener("click", () => {
       clearInterval(timerInterval);
@@ -157,7 +157,7 @@ function countdown() {
 
 
 // Fonction pour le bouton Suivant
-
+boutonSuivant.classList.add("btn-commencer")
 boutonSuivant.addEventListener("click", () => {
   if (score === maxScore) {
     confetti({
@@ -189,6 +189,7 @@ boutonSuivant.addEventListener("click", () => {
     time = 15;
     name.hidden = false;
     imageContainer.hidden = true;
+    sonContainer.hidden = true
   }
 
   if (currentBar < maxBar) {
@@ -224,9 +225,12 @@ closeButton.addEventListener("click", () => {
     //progressBar.style.display = 'none'
     boutonRejouer.style.display = "inline-block";
     boutonAutreQuiz.style.display = "inline-block";
-    dialog.style.display = "none";
     countDownID.style.display = "none";
-    imageContainer.hidden = true
+    clearInterval(timerInterval);
+    time = 15;
+    name.hidden = false;
+    imageContainer.hidden = true;
+    sonContainer.hidden = true
   }
 
   if (currentBar < maxBar) {
@@ -256,6 +260,7 @@ boutonRejouer.addEventListener("click", () => {
   progressBar.style.display = "inline-block";
   progressBar.value = 0;
   countDownID.style.display = "inline-block";
+  sonContainer.hidden = false
 
   // TODO Recharger la première question
   loadQuestion(currentQuestionIndex);

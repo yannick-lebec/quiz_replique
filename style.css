@@ -7,6 +7,9 @@
   --color-brownlight: #ebc886;
   --color-light-yellow: #f5db9e;
   --color-light-green: #b4c04f;
+  --font-text : "Oswald", sans-serif;
+ 
+
 }
 
 @font-face {
@@ -96,7 +99,7 @@ body {
 }
 
 .btn-commencer {
-  font-family: "Oswald", sans-serif;
+  font-family: var(--font-text);
   display: block;
   height: 56px;
   padding: 0 28px;
@@ -128,7 +131,7 @@ body {
 }
 
 .bouton-reponse{
-  font-family: "Oswald", sans-serif;
+  font-family: var(--font-text);
   font-weight: 500;
   font-size: 1.2rem;
   background: var(--color-light-yellow);
@@ -217,12 +220,12 @@ body {
 }
 
 #scoreFinal {
+  font-family: var(--font-text) ;
       padding: 10px 20px;
     color: #c69867;
     font-size: 15px;
     font-weight: bold;
-    display: flex
-;
+    display: flex;
     border: 2px solid;
 }
 
@@ -232,6 +235,7 @@ body {
 }
 
 #countDown {
+  font-family: var(--font-text);
   padding: 10px 20px;
     border: 2px solid #c69867;
     background-color: #ebc886;
@@ -242,14 +246,102 @@ body {
    
 }
 
+.question {
+  font-family: var(--font-text);
+  font-size: 1.2rem;
+}
+
 #timeUpDialog {
+    font-family: var(--font-text);
+    font-size: 1.2rem;
     position-area : center;
     width: 30rem;
-    height: 30rem;
+    height: auto;
     border-radius: 10px;
     border: none;
     background: #f8f9f1;
     padding: 25px;
+}
+
+#tempsEcoule{
+  margin-top: 5%;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+#noPoints {
+  color: #c69867;
+}
+
+#bonneReponse{
+  background-color: #c69867;
+  border-radius: 10px;
+  color: var(--color-white);
+  margin-top: 5%;
+  padding: 10px;
+}
+
+#iframe {
+  margin-top: 5%;
+  position: relative;
+  width: 100%;
+  max-width: 800px;   /* largeur max */
+  margin: 20px auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  
+}
+
+#iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+#closeButton {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  font-family: var(--font-text);
+  height: 56px;
+  min-width: 300px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-dark-gray);
+  letter-spacing: 0.3px;
+  /* text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); */
+  cursor: pointer;
+  background-color: var(--color-light-yellow);
+  border: 2px solid var(--color-brown);
+  clip-path: polygon(6% 0%, 94% 0, 100% 50%, 94% 100%, 6% 100%, 0% 50%);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35),
+    inset 0 8px 18px rgba(255, 255, 255, 0.08),
+    inset 0 -8px 18px rgba(0, 0, 0, 0.35);
+}
+
+#name-container{
+  font-family: var(--font-text);
+  font-size: 1.2rem;
+  margin-top: 10%;
+}
+
+#inputID{
+  width: 100%;
+  font-family: var(--font-text);
+  font-size: 1.2rem;
+  height: 2rem;
+  text-align: center;
+  color:#c69867 ;
+  border: none;
+  border-radius: 10px;
+}
+
+#inputID:focus{
+  outline: 2px solid #c69867;
 }
 
 @media (max-width: 600px) {

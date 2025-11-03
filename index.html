@@ -39,9 +39,8 @@
       <p id="countDown"></p>
       <div id = "alert-container">
           <dialog id="timeUpDialog">
-          <p>TEMPS ÉCOULÉ</p> <br>
-          <p id = "bonneReponse"></p>
-          <div id = "iframe" width="560" height="315" title="Youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></div>
+          <p id = tempsEcoule>TEMPS ÉCOULÉ <br> <p id = "noPoints">+0 points</p><p id = "bonneReponse"></p></p><br>
+          <div id = "iframe" width="800" height="450" title="Youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></div>
           <button id="closeButton">Suivant</button>
           </dialog>
       </div>
@@ -68,32 +67,15 @@
    
     <div class="button-container">
       <button id="next-button">Suivant</button>
-      <button id="replay-button" style="display: none;">Rejouer</button>
-      <button id="otherQuiz-button" style="display: none;">Autre quiz</button> 
-    </div>
-
-    <div class = "progressBar-container">
-      <progress id="progressBar" value ="0" max ="100"></progress>
-    </div>
-
-
-    <div id = "countDown-container">
-      <p id="countDown"></p>
-      <div id = "alert-container">
-          <dialog id="timeUpDialog">
-          <p id = "tempsEcoule">TEMPS ÉCOULÉ</p> <br>
-          <p id = "bonneReponse"></p>
-          <div id = "iframe" width="560" height="315" title="Youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></div>
-          <button id="closeButton">Suivant</button>
-          </dialog>
-      </div>
+      <button class = "bouton-reponse" id="replay-button" style="display: none;">Rejouer</button>
+      <button class = "bouton-reponse" id="otherQuiz-button" style="display: none;">Autre quiz</button> 
     </div>
 
     <!--Pour enregistrer son Score-->
     <div id = "name-container"> 
       <p>Tu as envie d'enregistrer ton score final ?</p><br>
       <p>Ecrit ton prénom puis appuie sur le bouton ! </p> <br>
-      <input type="text" placeholder="Prénom" id = "inputID"><button id = "nameButton">Envoyer</button></input>
+      <input type="text" placeholder="Prénom" id = "inputID"><button class = "bouton-reponse" id = "nameButton">Envoyer</button></input>
     </div>
     
       </div> <!-- #quiz-container -->

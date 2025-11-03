@@ -189,6 +189,7 @@ boutonSuivant.addEventListener("click", () => {
     time = 15;
     name.hidden = false;
     imageContainer.hidden = true;
+    sonContainer.hidden = true
   }
 
   if (currentBar < maxBar) {
@@ -224,9 +225,12 @@ closeButton.addEventListener("click", () => {
     //progressBar.style.display = 'none'
     boutonRejouer.style.display = "inline-block";
     boutonAutreQuiz.style.display = "inline-block";
-    dialog.style.display = "none";
     countDownID.style.display = "none";
-    imageContainer.hidden = true
+    clearInterval(timerInterval);
+    time = 15;
+    name.hidden = false;
+    imageContainer.hidden = true;
+    sonContainer.hidden = true
   }
 
   if (currentBar < maxBar) {
@@ -256,6 +260,7 @@ boutonRejouer.addEventListener("click", () => {
   progressBar.style.display = "inline-block";
   progressBar.value = 0;
   countDownID.style.display = "inline-block";
+  sonContainer.hidden = false
 
   // TODO Recharger la première question
   loadQuestion(currentQuestionIndex);

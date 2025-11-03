@@ -30,6 +30,23 @@
       <p>Score : 0</p>
     </div>
 
+     <div class = "progressBar-container">
+      <progress id="progressBar" value ="0" max ="100"></progress>
+    </div>
+
+
+    <div id = "countDown-container">
+      <p id="countDown"></p>
+      <div id = "alert-container">
+          <dialog id="timeUpDialog">
+          <p>TEMPS ÉCOULÉ</p> <br>
+          <p id = "bonneReponse"></p>
+          <div id = "iframe" width="560" height="315" title="Youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></div>
+          <button id="closeButton">Suivant</button>
+          </dialog>
+      </div>
+    </div>
+
 
     <div id = "image-container">
     <img id="question-image" alt="Illustration de la question" hidden>
@@ -51,22 +68,7 @@
       <button id="otherQuiz-button" style="display: none;">Autre quiz</button> 
     </div>
 
-    <div class = "progressBar-container">
-      <progress id="progressBar" value ="0" max ="100"></progress>
-    </div>
-
-
-    <div id = "countDown-container">
-      <p id="countDown"></p>
-      <div id = "alert-container">
-          <dialog id="timeUpDialog">
-          <p>TEMPS ÉCOULÉ</p> <br>
-          <p id = "bonneReponse"></p>
-          <div id = "iframe" width="560" height="315" title="Youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></div>
-          <button id="closeButton">Suivant</button>
-          </dialog>
-      </div>
-    </div>
+   
 
     <!--Pour enregistrer son Score-->
     <div id = "name-container"> 

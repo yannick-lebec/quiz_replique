@@ -192,16 +192,15 @@ body {
 }
 
 #scoreFinal {
-  border: 1px solid #c69867;
-  background-color: #c69867;
-  border-radius: 5rem;
-  border: 1px solid #c69867;
-  padding: 10px 20px;
-  color: black;
-  font-size: 15px;
-  font-weight: bold;
-  display: flex;
+      padding: 10px 20px;
+    color: #c69867;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex
+;
+    border: 2px solid;
 }
+
 
 #scoreFinal > p {
   text-align: center;
@@ -209,11 +208,13 @@ body {
 
 #countDown {
   padding: 10px 20px;
-  border: 3px solid white;
-  border-radius: 4rem;
-  color: black;
-  display: inline-block;
-  background-color: var(--color-brown);
+    border: 2px solid #c69867;
+    background-color: #ebc886;
+    border-radius: 10px;
+    color: black;
+    display: inline-block;
+
+   
 }
 
 @media (max-width: 600px) {

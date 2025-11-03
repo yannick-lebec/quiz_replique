@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 :root {
   --color-white: #f8f8f1;
   --color-dark-gray: #333;
@@ -94,16 +96,18 @@ body {
 }
 
 .btn-commencer {
+  font-family: "Oswald", sans-serif;
   display: block;
   height: 56px;
   padding: 0 28px;
   width: 100%;
   box-sizing: border-box;
   min-width: 300px;
-  font-size: 16px;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: var(--color-dark-gray);
   letter-spacing: 0.3px;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  /* text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); */
   cursor: pointer;
   background-color: var(--color-light-yellow);
   border: 2px solid var(--color-brown);
@@ -124,6 +128,9 @@ body {
 }
 
 .bouton-reponse{
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
   background: var(--color-light-yellow);
   border: 2px solid var(--color-brown);
   color: #3B2200;
@@ -131,10 +138,10 @@ body {
   padding: 12px 30px;
   border-radius: 10px;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
-   box-shadow: 0 3px 22px rgba(0, 0, 0, 0.10),
-    inset 0 8px 18px rgba(255, 255, 255, 0.08),
-    inset 0 -8px 18px rgba(0, 0, 0, 0.25);
+  /* text-transform: uppercase; */
+  box-shadow: 0 3px 22px rgba(0, 0, 0, 0.10),
+  inset 0 8px 18px rgba(255, 255, 255, 0.08),
+  inset 0 -8px 18px rgba(0, 0, 0, 0.25);
  
   transition: all 0.2s ease;
 }
@@ -185,6 +192,7 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
+
 
 #options-container {
   display: grid;

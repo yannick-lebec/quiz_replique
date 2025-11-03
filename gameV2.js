@@ -107,7 +107,7 @@ function loadQuestion() {
     option_btn.addEventListener("click", () => {
       clearInterval(timerInterval);
       checkAnswer(option_btn, option, currentQuestion.correct_answer);
-      // Le bonton suivant est réactivé
+      // Le bouton suivant est réactivé
       boutonSuivant.disabled = false;
     });
     options.appendChild(option_btn);

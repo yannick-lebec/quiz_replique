@@ -2,7 +2,7 @@
   --color-white: #f8f8f1;
   --color-dark-gray: #333;
   --color-brown: #c69867;
-  --color-brownlight:#EBC886;
+  --color-brownlight: #ebc886;
   --color-light-yellow: #f5db9e;
   --color-light-green: #b4c04f;
 }
@@ -105,7 +105,7 @@ body {
   letter-spacing: 0.3px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   cursor: pointer;
-  
+
   background-color: var(--color-light-yellow);
   border: 2px solid var(--color-brown);
   clip-path: polygon(6% 0%, 94% 0, 100% 50%, 94% 100%, 6% 100%, 0% 50%);
@@ -170,55 +170,55 @@ body {
   padding: 20px;
 }
 
+#options-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  margin: 20px;
+}
 
-
-  #countDown {
+#countDown {
   padding: 10px 20px;
   border: 3px solid white;
   border-start-start-radius: 5rem;
   border-start-end-radius: 5rem;
   border-end-end-radius: 5rem;
   border-end-start-radius: 5rem;
-    color: black;
-    display: inline-block;
-    background-color: #C69867;
-   
-  
-  }
+  color: black;
+  display: inline-block;
+  background-color: #c69867;
+}
 
-
-  #progressBar {
-
+#progressBar {
   width: 400px;
   height: 10px;
   border: none;
   appearance: none;
   -webkit-appearance: none;
- }
+}
 
-  #progressBar::-webkit-progress-value {
-  background-color: #C69867; 
-  border-radius: 1
-
-  
+#progressBar::-webkit-progress-value {
+  background-color: #c69867;
+  border-radius: 1;
 }
 
 #scoreFinal {
-  border: 1px solid #C69867;
-  background-color: #C69867;
-   border-radius: 5rem;
-   border: 1px solid #C69867;
-   padding: 10px 20px;
+  border: 1px solid #c69867;
+  background-color: #c69867;
+  border-radius: 5rem;
+  border: 1px solid #c69867;
+  padding: 10px 20px;
   color: black;
   font-size: 15px;
   font-weight: bold;
   display: flex;
-
 }
 
-  #scoreFinal > p{
-    text-align: center ;
-  }
+#scoreFinal > p {
+  text-align: center;
+}
 
 #countDown {
   padding: 10px 20px;
@@ -227,9 +227,7 @@ body {
   color: black;
   display: inline-block;
   background-color: var(--color-brown);
-
 }
-
 
 @media (max-width: 600px) {
   .btn-commencer {

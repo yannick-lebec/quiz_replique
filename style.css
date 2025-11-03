@@ -1,11 +1,9 @@
 :root {
   --color-white: #f8f8f1;
-  --color-black: #0d0337;
-  --color-purple: #441160;
-  --color-dark-blue: #35236f;
-  --color-blue: #213db9;
-  --color-gray: #bbb8cb;
-  --color-orange: #ffa900;
+  --color-dark-gray: #333;
+  --color-brown: #c69867;
+  --color-light-yellow: #f5db9e;
+  --color-light-green: #b4c04f;
 }
 
 @font-face {
@@ -82,7 +80,7 @@ body {
   width: 140px;
   height: 2px;
   transform: translateY(-50%);
-  background: #c69867;
+  background: var(--color-brown);
   box-shadow: 0 0 6px rgba(159, 182, 255, 0.7);
 }
 
@@ -102,12 +100,13 @@ body {
   box-sizing: border-box;
   min-width: 300px;
   font-size: 16px;
-  color: #333;
+  color: var(--color-dark-gray);
   letter-spacing: 0.3px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   cursor: pointer;
-  background-color: #f5db9e;
-  border: 2px solid #c69867;
+  
+  background-color: var(--color-light-yellow);
+  border: 2px solid var(--color-brown);
   clip-path: polygon(6% 0%, 94% 0, 100% 50%, 94% 100%, 6% 100%, 0% 50%);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35),
     inset 0 8px 18px rgba(255, 255, 255, 0.08),
@@ -120,11 +119,19 @@ body {
 }
 
 .btn-commencer:hover {
-  background-color: #b4c04f;
+  background-color: var(--color-light-green);
   color: var(--color-white);
 }
 
 /* Style page quiz */
+
+#quiz-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #quiz-container {
   background-color: var(--color-white);
   text-align: center;
@@ -159,6 +166,15 @@ body {
 }
 
 
+#countDown {
+  padding: 10px 20px;
+  border: 3px solid white;
+  border-radius: 75%;
+  color: black;
+  display: inline-block;
+  background-color: var(--color-brown);
+}
+
 
 @media (max-width: 600px) {
   .btn-commencer {
@@ -176,15 +192,6 @@ body {
 
   #photo_accueil {
     width: 90%;
-  }
-
-  #countDown {
-    padding: 10px 20px;
-    border: 3px solid white;
-    border-radius: 75%;
-    color: white;
-    display: inline-block;
-    background-color: rgb(25, 25, 105);
   }
 
   .btn-commencer {

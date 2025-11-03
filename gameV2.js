@@ -102,7 +102,7 @@ function loadQuestion() {
   // Injecter les options dans le HTML
   currentQuestion.options.forEach((option) => {
     const option_btn = document.createElement("button");
-    option_btn.classList.add("btn-commencer");
+    option_btn.classList.add("bouton-reponse");
     option_btn.innerText = option;
     option_btn.addEventListener("click", () => {
       clearInterval(timerInterval);
@@ -157,7 +157,7 @@ function countdown() {
 
 
 // Fonction pour le bouton Suivant
-
+boutonSuivant.classList.add("btn-commencer")
 boutonSuivant.addEventListener("click", () => {
   if (score === maxScore) {
     confetti({

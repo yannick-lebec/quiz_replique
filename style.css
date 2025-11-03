@@ -118,14 +118,31 @@ body {
   z-index: 1;
 }
 
-#btn-commencer:hover {
+.btn-commencer:hover {
   background-color: var(--color-light-green);
   color: var(--color-white);
 }
 
-.btn-commencer:hover {
-  background-color: var(--color-brownlight);
-  color: var(--color-dark-gray);
+.bouton-reponse{
+  background: var(--color-light-yellow);
+  border: 2px solid var(--color-brown);
+  color: #3B2200;
+  min-width: 300px;
+  padding: 12px 30px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+   box-shadow: 0 3px 22px rgba(0, 0, 0, 0.10),
+    inset 0 8px 18px rgba(255, 255, 255, 0.08),
+    inset 0 -8px 18px rgba(0, 0, 0, 0.25);
+ 
+  transition: all 0.2s ease;
+}
+
+.bouton-reponse:hover {
+  background: radial-gradient(circle at 70% 70%, #FFD87A, #C5942F);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(255,215,100,0.6);
 }
 /* Style page quiz */
 

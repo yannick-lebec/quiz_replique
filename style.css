@@ -2,6 +2,7 @@
   --color-white: #f8f8f1;
   --color-dark-gray: #333;
   --color-brown: #c69867;
+  --color-brownlight:#EBC886;
   --color-light-yellow: #f5db9e;
   --color-light-green: #b4c04f;
 }
@@ -118,11 +119,15 @@ body {
   z-index: 1;
 }
 
-.btn-commencer:hover {
+#btn-commencer:hover {
   background-color: var(--color-light-green);
   color: var(--color-white);
 }
 
+.btn-commencer:hover {
+  background-color: var(--color-brownlight);
+  color: var(--color-dark-gray);
+}
 /* Style page quiz */
 
 #quiz-wrapper {

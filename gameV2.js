@@ -16,6 +16,7 @@ const boutonRejouer = document.getElementById("replay-button");
 const boutonAutreQuiz = document.getElementById("otherQuiz-button");
 
 let currentQuestionIndex = 0; // Variables pour suivre l'état du quiz // Commence à la première question
+let currentQuestion = quiz_repliques.question[currentQuestionIndex];
 
 // Pour la barre de progression
 const progressBar = document.getElementById("progressBar");
@@ -50,6 +51,13 @@ const boutonClassement = document.getElementById("boutonClassement");
 
 let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || []; // Récupère l'ancien classement depuis localStorage
 
+// Pour les Extraits de son
+const sonContainer = document.getElementById("son-container")
+
+// Pour les vidéos Youtube
+const iframe = document.getElementById("iframe")
+ 
+
 
 // Code Page d'Accueil
 
@@ -77,7 +85,7 @@ function loadQuestion() {
   options.innerHTML = "";
 
   // Récupérer la question actuelle
-  const currentQuestion = quiz_repliques.question[currentQuestionIndex];
+  currentQuestion = quiz_repliques.question[currentQuestionIndex];
 
   // Injecter la question dans le HTML
   question.innerText = currentQuestion.text;
@@ -112,6 +120,16 @@ function loadQuestion() {
   }
 
   name.hidden = true;
+
+  // On récupère le son et on l'automatise
+  sonContainer.innerHTML = ""
+
+  
+  const sound = document.createElement("audio");
+  sound.controls = true ; //affiche le bouton Play/Pause
+  sound.src = currentQuestion.son
+  sonContainer.appendChild(sound)
+  
 }
 
 // Fonction pour le Timer
@@ -127,6 +145,12 @@ function countdown() {
     clearInterval(timerInterval); // on décrémente -1 a mon time
     dialog.showModal();
     bonneReponse.innerText = `La bonne réponse est : \n ${quiz_repliques.question[currentQuestionIndex].correct_answer}`
+    
+    //Pour le vidéo Youtube
+    iframe.innerHTML = ""
+    const iframeCreator = document.createElement("iframe")
+    iframeCreator.src = currentQuestion.youtube
+    iframe.appendChild(iframeCreator)
 }}
 
 // Fonction pour le bouton Suivant
@@ -200,6 +224,7 @@ closeButton.addEventListener("click", () => {
     boutonAutreQuiz.style.display = "inline-block";
     dialog.style.display = "none";
     countDownID.style.display = "none";
+    imageContainer.hidden = true
   }
 
   if (currentBar < maxBar) {

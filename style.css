@@ -193,17 +193,20 @@ body {
   height: 10px;
   border: none;
   appearance: none;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+ }
 
   #progressBar::-webkit-progress-value {
   background-color: #C69867; 
   border-radius: 1
+
+  
 }
 
 #scoreFinal {
   height: 50px;
   position: fixed; /* reste visible même quand on défile */
-  top: 02px;       /* distance du haut */
+  top: 160px;       /* distance du haut */
   left: 30%;       /* centré horizontalement */
   transform: translateX(-50%); /* recentre le bloc */
   z-index: 9999;   /* reste au-dessus du reste de la page */
@@ -219,7 +222,7 @@ body {
 #countDown {
   padding: 10px 20px;
   border: 3px solid white;
-  border-radius: 75%;
+  border-radius: 4rem;
   color: black;
   display: inline-block;
   background-color: var(--color-brown);

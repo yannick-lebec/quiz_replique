@@ -29,20 +29,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "ObelixPro", sans-serif;
 }
 
 body {
   width: 100vw;
   min-height: 100vh;
-  background: url(images/394053-PCPZJH-124.jpg)
+  background: url(images/394053-PCPZJH-124.jpg);
 }
 
 /* Style page d'accueil */
 
 #quiz_accueil {
-  padding: 75px;
-  min-width: 635px;
+  min-width: 0;
+  padding: clamp(24px, 5vw, 75px);
+  font-family: "ObelixPro", sans-serif;
 }
 
 #photo_accueil {
@@ -82,7 +82,7 @@ body {
   width: 140px;
   height: 2px;
   transform: translateY(-50%);
-  background: #C69867;
+  background: #c69867;
   box-shadow: 0 0 6px rgba(159, 182, 255, 0.7);
 }
 
@@ -95,19 +95,19 @@ body {
 }
 
 .btn-commencer {
-  position: relative;
-  display: inline-block;
+  display: block;
   height: 56px;
   padding: 0 28px;
-  min-width: 520px;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 300px;
   font-size: 16px;
   color: #333;
   letter-spacing: 0.3px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   cursor: pointer;
-  /* background: #d4cc5b; */
-  background-color: #F5DB9E;
-  border: 2px solid #C69867;
+  background-color: #f5db9e;
+  border: 2px solid #c69867;
   clip-path: polygon(6% 0%, 94% 0, 100% 50%, 94% 100%, 6% 100%, 0% 50%);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35),
     inset 0 8px 18px rgba(255, 255, 255, 0.08),
@@ -120,7 +120,7 @@ body {
 }
 
 .btn-commencer:hover {
-  background-color: #B4C04F;
+  background-color: #b4c04f;
   color: var(--color-white);
 }
 
@@ -158,10 +158,24 @@ body {
   padding: 20px;
 }
 
+
+
 @media (max-width: 600px) {
   .btn-commencer {
-    min-width: 90%;
-    padding: 0 20px;
+    width: 100%;
+    min-width: auto;
+    font-size: 0.8rem;
+    height: 46px;
+    clip-path: polygon(8% 0%, 92% 0, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
+  }
+
+  .button-wrapper::before,
+  .button-wrapper::after {
+    width: 50px;
+  }
+
+  #photo_accueil {
+    width: 90%;
   }
 
   #countDown {
@@ -172,7 +186,7 @@ body {
     display: inline-block;
     background-color: rgb(25, 25, 105);
   }
-  
+
   .btn-commencer {
     max-width: 95%;
     font-size: 0.8rem;

@@ -1,5 +1,5 @@
 :root {
-  --color-white: #e0ecf6;
+  --color-white: #f8f8f1;
   --color-black: #0d0337;
   --color-purple: #441160;
   --color-dark-blue: #35236f;
@@ -8,29 +8,50 @@
   --color-orange: #ffa900;
 }
 
-* {
+@font-face {
+  font-family: "ObelixPro";
+  src: url("fonts/ObelixPro-cyr.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ObelixProBold";
+  src: url("fonts/ObelixProB-cyr.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ObelixProLight";
+  src: url("fonts/ObelixProLt-cyr.ttf") format("truetype");
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "ObelixPro", sans-serif;
 }
 
 body {
   width: 100vw;
   min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
-  background: radial-gradient(
-    circle,
-    rgba(53, 35, 111, 1) 50%,
-    rgba(68, 17, 96, 1) 100%,
-    rgba(53, 35, 111, 1) 50%
-  );
+  background: url(images/394053-PCPZJH-124.jpg)
+}
+
+/* Style page d'accueil */
+
+#quiz_accueil {
+  padding: 75px;
+  min-width: 635px;
 }
 
 #photo_accueil {
-  background-color: rgb(248, 248, 241);
+  background-color: var(--color-white);
   text-align: center;
+  width: 50%;
   padding: 20px;
-  margin: 100px;
+  margin: auto;
+  border-radius: 16px;
 }
 
 #photo_accueil img {
@@ -42,32 +63,96 @@ body {
 
 #title_accueil {
   font-size: 1.6rem;
+  text-transform: uppercase;
   margin: 20px 0;
+  color: var(--color-black);
+}
+
+.button-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 0 50px;
+}
+
+.button-wrapper::before,
+.button-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 140px;
+  height: 2px;
+  transform: translateY(-50%);
+  background: #C69867;
+  box-shadow: 0 0 6px rgba(159, 182, 255, 0.7);
+}
+
+.button-wrapper::before {
+  right: calc(100% - 50px);
+}
+
+.button-wrapper::after {
+  left: calc(100% - 50px);
+}
+
+.btn-commencer {
+  position: relative;
+  display: inline-block;
+  height: 56px;
+  padding: 0 28px;
+  min-width: 520px;
+  font-size: 16px;
   color: #333;
-}
-
-#btn-commencer {
-  background-color: #d3ca16;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 1rem;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   cursor: pointer;
+  /* background: #d4cc5b; */
+  background-color: #F5DB9E;
+  border: 2px solid #C69867;
+  clip-path: polygon(6% 0%, 94% 0, 100% 50%, 94% 100%, 6% 100%, 0% 50%);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35),
+    inset 0 8px 18px rgba(255, 255, 255, 0.08),
+    inset 0 -8px 18px rgba(0, 0, 0, 0.35);
 }
 
-#btn-commencer:hover {
-  background-color: rgb(126, 202, 127);
+.btn-commencer span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-commencer:hover {
+  background-color: #B4C04F;
+  color: var(--color-white);
+}
+
+/* Style page quiz */
+#quiz-container {
+  background-color: var(--color-white);
+  text-align: center;
+  width: 50%;
+  padding: 20px;
+  margin: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tant qu'il est caché : on ne le rend PAS visible */
+#quiz-container[hidden] {
+  display: none !important;
 }
 
 #question-image {
   display: block;
-  width: 80%;
+  width: 100%;
   margin: 16px auto 12px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
+<<<<<<< HEAD
 #countDown{
   padding: 10px 20px; 
   border: 3px solid yellow;    
@@ -84,3 +169,33 @@ padding: 20px;
 border-color: #d3ca16;
 height: 100px;width: 50%;
 }
+=======
+#image-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .btn-commencer {
+    min-width: 90%;
+    padding: 0 20px;
+  }
+
+  #countDown {
+    padding: 10px 20px;
+    border: 3px solid white;
+    border-radius: 75%;
+    color: white;
+    display: inline-block;
+    background-color: rgb(25, 25, 105);
+  }
+  
+  .btn-commencer {
+    max-width: 95%;
+    font-size: 0.8rem;
+    height: 46px;
+    clip-path: polygon(8% 0%, 92% 0, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
+  }
+}
+>>>>>>> 23c044503f83c895a45c7c292a4dc68abd5daa9d

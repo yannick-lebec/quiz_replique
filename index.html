@@ -23,7 +23,14 @@
         </div>
     </div>
 
-  <div id="quiz-container" hidden>
+    <div id="quiz-wrapper">
+      <div id="quiz-container" hidden>
+
+    <div id="scoreFinal">
+      <p>Score : 0</p>
+    </div>
+
+
     <div id = "image-container">
     <img id="question-image" alt="Illustration de la question" hidden>
     </div>
@@ -43,11 +50,6 @@
       <button id="replay-button" style="display: none;">Rejouer</button>
       <button id="otherQuiz-button" style="display: none;">Autre quiz</button> 
     </div>
-
-    <div id="scoreFinal">
-      <p>Score : 0</p>
-    </div>
-
 
     <div class = "progressBar-container">
       <progress id="progressBar" value ="0" max ="100"></progress>
@@ -77,7 +79,9 @@
     <div class="son" id = "son-container">
     </div>
     
-  </div>
+      </div> <!-- #quiz-container -->
+    </div> <!-- #quiz-wrapper -->
+  
 
 
   <!--Pour le Classement-->

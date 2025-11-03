@@ -8,7 +8,7 @@ const quiz = document.querySelector("#quiz-container");
 
 // Pour les Questions
 const questionImage = document.getElementById("question-image");
-const imageContainer = document.getElementById("image-container")
+const imageContainer = document.getElementById("image-container");
 const question = document.getElementById("question-text");
 const options = document.getElementById("options-container");
 const boutonSuivant = document.getElementById("next-button");
@@ -23,13 +23,13 @@ const progressBar = document.getElementById("progressBar");
 
 let currentBar = progressBar.value;
 let maxBar = progressBar.max;
-const step = maxBar / quiz_repliques.question.length
+const step = maxBar / quiz_repliques.question.length;
 
 // Pour le timer
 const dialog = document.getElementById("timeUpDialog");
 const closeButton = document.getElementById("closeButton");
 const countDownID = document.getElementById("countDown");
-const bonneReponse = document.getElementById("bonneReponse")
+const bonneReponse = document.getElementById("bonneReponse");
 
 let time = 15;
 let timerInterval;
@@ -40,7 +40,7 @@ const nameButton = document.getElementById("nameButton");
 const inputID = document.getElementById("inputID");
 const scoreFinal = document.getElementById("scoreFinal");
 
-let maxScore = quiz_repliques.question.length
+let maxScore = quiz_repliques.question.length;
 
 let score = 0;
 
@@ -57,6 +57,7 @@ const sonContainer = document.getElementById("son-container")
 // Pour les vidéos Youtube
 const iframe = document.getElementById("iframe")
  
+
 
 
 // Code Page d'Accueil
@@ -91,10 +92,9 @@ function loadQuestion() {
   question.innerText = currentQuestion.text;
 
   // Injecte l'image si la question est chargé
-    questionImage.src = currentQuestion.images;
-    questionImage.alt = `Illustration – ${currentQuestion.text}`;
-    imageContainer.hidden = false;
-  
+  questionImage.src = currentQuestion.images;
+  questionImage.alt = `Illustration – ${currentQuestion.text}`;
+  imageContainer.hidden = false;
 
   // Le bouton suivant est désactivé
   boutonSuivant.disabled = true;
@@ -102,6 +102,7 @@ function loadQuestion() {
   // Injecter les options dans le HTML
   currentQuestion.options.forEach((option) => {
     const option_btn = document.createElement("button");
+    option_btn.classList.add("btn-commencer");
     option_btn.innerText = option;
     option_btn.addEventListener("click", () => {
       clearInterval(timerInterval);
@@ -144,6 +145,7 @@ function countdown() {
   } else {
     clearInterval(timerInterval); // on décrémente -1 a mon time
     dialog.showModal();
+
     bonneReponse.innerText = `La bonne réponse est : \n ${quiz_repliques.question[currentQuestionIndex].correct_answer}`
     
     //Pour le vidéo Youtube
@@ -153,17 +155,17 @@ function countdown() {
     iframe.appendChild(iframeCreator)
 }}
 
-// Fonction pour le bouton Suivant
- 
 
+// Fonction pour le bouton Suivant
 
 boutonSuivant.addEventListener("click", () => {
-  if (score === maxScore){
+  if (score === maxScore) {
     confetti({
-  particleCount: 100,
-  spread: 70,
-  origin: { x: 0.5, y: 0.5 }
-})};
+      particleCount: 100,
+      spread: 70,
+      origin: { x: 0.5, y: 0.5 },
+    });
+  }
   // Incrémenter l'index de la question
 
   currentQuestionIndex++;
@@ -180,13 +182,13 @@ boutonSuivant.addEventListener("click", () => {
     options.innerHTML = ""; // Effacer les options
     boutonSuivant.style.display = "none"; // Cacher le bouton Suivant
     //progressBar.style.display = 'none'
-    boutonRejouer.style.display = 'inline-block';
+    boutonRejouer.style.display = "inline-block";
     boutonAutreQuiz.style.display = "inline-block";
-    countDownID.style.display = 'none';
-    clearInterval(timerInterval)
-    time = 15
-    name.hidden = false
-    imageContainer.hidden = true
+    countDownID.style.display = "none";
+    clearInterval(timerInterval);
+    time = 15;
+    name.hidden = false;
+    imageContainer.hidden = true;
   }
 
   if (currentBar < maxBar) {
@@ -273,59 +275,56 @@ function checkAnswer(clickedButton, selectedOption, correctAnswer) {
 
   if (selectedOption === correctAnswer) {
     // Affiche la bonne réponse en vert
-    clickedButton.style.backgroundColor = "green";
+    clickedButton.style.backgroundColor = "#27AE60";
     clickedButton.style.color = "white";
     score++;
     scoreFinal.innerHTML = `Score : ${score}`;
   } else {
     // Affiche la mauvaise réponse en rouge
-    clickedButton.style.backgroundColor = "red";
+    clickedButton.style.backgroundColor = "#C0392B";
     clickedButton.style.color = "white";
 
     // Si la mauvaise réponse est cliquer affiche la bonne réponse
     allButtons.forEach((btn) => {
       if (btn.innerText === correctAnswer) {
-        btn.style.backgroundColor = "green";
+        btn.style.backgroundColor = "#27AE60";
         btn.style.color = "white";
       }
     });
   }
 }
 
-
 // Fonction pour le bouton Prénom
 
-nameButton.addEventListener ("click", () =>{
-    showLeaderboard(leaderboard);
-    classementDialog.showModal();
-    inputID.value = '';
-    
+nameButton.addEventListener("click", () => {
+  showLeaderboard(leaderboard);
+  classementDialog.showModal();
+  inputID.value = "";
 });
 
-
 // Fonction pour le classement
-function showLeaderboard(leaderboard){
-    leaderboard.push({name : inputID.value, points: score});             // Ajoute le nouveau joueur
-    leaderboard.sort((a, b) => b.points - a.points);                    // Trie le classement (de plus grand au plus petit)
-    localStorage.setItem('leaderboard', JSON.stringify(leaderboard))   // Sauvegarde le classement mis à jour
+function showLeaderboard(leaderboard) {
+  leaderboard.push({ name: inputID.value, points: score }); // Ajoute le nouveau joueur
+  leaderboard.sort((a, b) => b.points - a.points); // Trie le classement (de plus grand au plus petit)
+  localStorage.setItem("leaderboard", JSON.stringify(leaderboard)); // Sauvegarde le classement mis à jour
 
-    classementList.innerHTML='';
+  classementList.innerHTML = "";
 
-    //Crée le classement
-    leaderboard.forEach((entry, index) =>{
-        const item = document.createElement('p');
-        item.textContent = `${index + 1}.${entry.name} - ${entry.points} pts`;
-        classementList.appendChild(item);
-    });
-    //classementDialog.showModal()
+  //Crée le classement
+  leaderboard.forEach((entry, index) => {
+    const item = document.createElement("p");
+    item.textContent = `${index + 1}.${entry.name} - ${entry.points} pts`;
+    classementList.appendChild(item);
+  });
+  //classementDialog.showModal()
 }
 
 // Pour le bouton du Classement
 
-boutonClassement.addEventListener ("click", () => {
-    classementDialog.close()
-})
+boutonClassement.addEventListener("click", () => {
+  classementDialog.close();
+});
 
 boutonAutreQuiz.addEventListener("click", () => {
-  window.location.href = "https://www.quizz.biz"
+  window.location.href = "https://www.quizz.biz";
 });

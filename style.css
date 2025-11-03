@@ -216,6 +216,16 @@ body {
   background-color: var(--color-brown);
 }
 
+#timeUpDialog {
+    position-area : center;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 10px;
+    border: none;
+    background: #f8f9f1;
+    padding: 25px;
+}
+
 @media (max-width: 600px) {
   .btn-commencer {
     width: 100%;

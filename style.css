@@ -17,15 +17,6 @@
   src: url("fonts/ObelixPro-cyr.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "ObelixProBold";
-  src: url("fonts/ObelixProB-cyr.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "ObelixProLight";
-  src: url("fonts/ObelixProLt-cyr.ttf") format("truetype");
-}
 
 *,
 *::before,
@@ -120,10 +111,10 @@ body {
     inset 0 -8px 18px rgba(0, 0, 0, 0.35);
 }
 
-.btn-commencer span {
+/* .btn-commencer span {
   position: relative;
   z-index: 1;
-}
+} */
 
 .btn-commencer:hover {
   background-color: var(--color-light-green);
@@ -157,7 +148,7 @@ body {
 /* Style page quiz */
 
 #quiz-wrapper {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   justify-content: center;
   align-items: center;

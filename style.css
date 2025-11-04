@@ -61,6 +61,13 @@ body {
   color: var(--color-black);
 }
 
+.btn-commencer p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
 .btn-commencer {
   font-family: var(--font-text);
   display: block;
@@ -69,7 +76,6 @@ body {
   width: 50%;
   box-sizing: border-box;
   margin: auto;
-  font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-dark-gray);
   letter-spacing: 0.3px;
@@ -345,8 +351,6 @@ body {
 }
 
 @media (max-width: 600px) {
-  #quiz_accueil {
-  }
   h1#title_accueil {
     font-size: 1rem;
   }
@@ -363,6 +367,7 @@ body {
   .btn-commencer {
     height: 42px;
   }
+
   .btn-commencer p {
     display: flex;
     justify-content: center;
@@ -380,5 +385,16 @@ body {
   #progressBar {
     width: 200px;
     height: 7px;
+  }
+
+  #replay-button {
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+  #classementList {
+    padding-left: 15%;
   }
 }

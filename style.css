@@ -27,6 +27,7 @@ body {
   width: 100vw;
   min-height: 100vh;
   background: url(images/394053-PCPZJH-124.jpg);
+  align-content: center;
 }
 
 /* Style page d'accueil */

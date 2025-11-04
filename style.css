@@ -4,7 +4,9 @@
   --color-white: #f8f8f1;
   --color-dark-gray: #333;
   --color-brown: #c69867;
-  --color-brownlight: #ebc886;
+  --color-brown-light: #ebc886;
+  --color-brown-light-hover: #ddb380;
+  --color-dark-brown: #3b2200;
   --color-light-yellow: #f5db9e;
   --color-light-green: #b4c04f;
   --font-text: "Oswald", sans-serif;
@@ -98,7 +100,7 @@ body {
   font-size: 1.2rem;
   background: var(--color-light-yellow);
   border: 2px solid var(--color-brown);
-  color: #3b2200;
+  color: var(--color-dark-brown);
   min-width: 300px;
   padding: 12px 30px;
   border-radius: 10px;
@@ -119,7 +121,7 @@ body {
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--color-dark-gray);
-  background: var(--color-brownlight);
+  background: var(--color-brown-light);
   border: 2px solid var(--color-brown);
   border-radius: 20px;
   padding: 12px 32px;
@@ -132,7 +134,7 @@ body {
 }
 
 .next-button:hover {
-  background: #ddb380;
+  background: var(--color-brown-light-hover);
   transform: translateY(-1px);
 }
 
@@ -211,14 +213,14 @@ body {
 }
 
 #progressBar::-webkit-progress-value {
-  background-color: #c69867;
+  background-color: var(--color-brown);
   border-radius: 1;
 }
 
 #scoreFinal {
   font-family: var(--font-text);
   padding: 10px 20px;
-  color: #c69867;
+  color: var(--color-brown);
   display: flex;
   font-size: 25px;
 }
@@ -230,8 +232,8 @@ body {
 #countDown {
   font-family: var(--font-text);
   padding: 10px 20px;
-  border: 2px solid #c69867;
-  background-color: #ebc886;
+  border: 2px solid var(--color-brown);
+  background-color: var(--color-brown-light);
   border-radius: 10px;
   color: black;
   display: inline-block;
@@ -263,11 +265,11 @@ body {
 }
 
 #noPoints {
-  color: #c69867;
+  color: var(--color-brown);
 }
 
 #bonneReponse {
-  background-color: #c69867;
+  background-color: var(--color-brown);
   border-radius: 10px;
   color: var(--color-white);
   margin-top: 5%;
@@ -307,7 +309,7 @@ body {
   font-size: 1.2rem;
   height: 2.5rem;
   text-align: center;
-  color: #c69867;
+  color: var(--color-brown);
   border: none;
   outline: 2px solid var(--color-brownlight);
   border-radius: 10px;
@@ -327,7 +329,7 @@ body {
   height: auto;
   border-radius: 10px;
   border: none;
-  background: #f8f9f1;
+  background: var(--color-white);
   padding: 25px;
   text-align: center;
   background-color: var(--color-white);
@@ -336,11 +338,11 @@ body {
 #titreClassement {
   margin-left: 15%;
   margin-right: 15%;
-  background-color: #c69867;
+  background-color: var(--color-brown);
 }
 
 #classementList {
-  background-color: #f5db9e;
+  background-color: var(--color-brown-light);
   padding-top: 5%;
   padding-bottom: 5%;
   margin-left: 15%;
@@ -412,6 +414,7 @@ body {
 
   #replay-button {
     margin-bottom: 15px;
+    margin-right: 0;
   }
 
   h2 {

@@ -221,12 +221,10 @@ body {
 
 #scoreFinal {
   font-family: var(--font-text) ;
-      padding: 10px 20px;
-    color: #c69867;
-    font-size: 15px;
-    font-weight: bold;
-    display: flex;
-    border: 2px solid;
+  padding: 10px 20px;
+  color: #c69867;
+  display: flex;
+  font-size: 25px;
 }
 
 
@@ -242,7 +240,7 @@ body {
     border-radius: 10px;
     color: black;
     display: inline-block;
-
+    margin-top: 15px;
    
 }
 

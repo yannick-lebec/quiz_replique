@@ -350,6 +350,29 @@ body {
   padding-left: 20%;
 }
 
+/* RESPONSIVE TABLET */
+
+@media (max-width: 1024px) {
+  #quiz-container {
+    width: 92%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .btn-commencer p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+  }
+
+  #replay-button {
+    margin-right: 15px;
+  }
+}
+
+/* RESPONSIVE MOBILE */
+
 @media (max-width: 600px) {
   h1#title_accueil {
     font-size: 1rem;

@@ -335,6 +335,37 @@ body {
   outline: 2px solid #c69867;
 }
 
+#classementDialog{
+  font-family: var(--font-text);
+    font-size: 1.2rem;
+    position-area : center;
+    width: 30rem;
+    height: auto;
+    border-radius: 10px;
+    border: none;
+    background: #f8f9f1;
+    padding: 25px;
+    text-align: center;
+    background-color: var(--color-white);
+}
+
+#titreClassement{
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: #c69867;
+}
+
+#classementList{
+  background-color: #f5db9e;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 5%;
+  text-align: justify;
+  padding-left: 20%;
+}
+
 @media (max-width: 600px) {
   .btn-commencer {
     width: 100%;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 
 :root {
   --color-white: #f8f8f1;
@@ -7,16 +7,13 @@
   --color-brownlight: #ebc886;
   --color-light-yellow: #f5db9e;
   --color-light-green: #b4c04f;
-  --font-text : "Oswald", sans-serif;
- 
-
+  --font-text: "Oswald", sans-serif;
 }
 
 @font-face {
   font-family: "ObelixPro";
   src: url("fonts/ObelixPro-cyr.ttf") format("truetype");
 }
-
 
 *,
 *::before,
@@ -121,30 +118,32 @@ body {
   color: var(--color-white);
 }
 
-.bouton-reponse{
+.bouton-reponse {
   font-family: var(--font-text);
   font-weight: 500;
   font-size: 1.2rem;
   background: var(--color-light-yellow);
   border: 2px solid var(--color-brown);
-  color: #3B2200;
+  color: #3b2200;
   min-width: 300px;
   padding: 12px 30px;
   border-radius: 10px;
   letter-spacing: 0.5px;
   /* text-transform: uppercase; */
-  box-shadow: 0 3px 22px rgba(0, 0, 0, 0.10),
-  inset 0 8px 18px rgba(255, 255, 255, 0.08),
-  inset 0 -8px 18px rgba(0, 0, 0, 0.25);
- 
+  box-shadow: 0 3px 22px rgba(0, 0, 0, 0.1),
+    inset 0 8px 18px rgba(255, 255, 255, 0.08),
+    inset 0 -8px 18px rgba(0, 0, 0, 0.25);
+
   transition: all 0.2s ease;
 }
 
 .bouton-reponse:hover {
+
   background: radial-gradient(circle at 70% 70%, #FFD87A, #c69867);
   transform: scale(1.03) translateY(-2px);
   box-shadow: 0 0 20px rgba(255,215,100,0.6);
 }
+
 
 .next-button {
   font-family: var(--font-text);
@@ -225,7 +224,6 @@ body {
   padding: 20px;
 }
 
-
 #options-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -249,15 +247,12 @@ body {
 }
 
 #scoreFinal {
-  font-family: var(--font-text) ;
-      padding: 10px 20px;
-    color: #c69867;
-    font-size: 15px;
-    font-weight: bold;
-    display: flex;
-    border: 2px solid;
+  font-family: var(--font-text);
+  padding: 10px 20px;
+  color: #c69867;
+  display: flex;
+  font-size: 25px;
 }
-
 
 #scoreFinal > p {
   text-align: center;
@@ -266,33 +261,33 @@ body {
 #countDown {
   font-family: var(--font-text);
   padding: 10px 20px;
-    border: 2px solid #c69867;
-    background-color: #ebc886;
-    border-radius: 10px;
-    color: black;
-    display: inline-block;
-
-   
+  border: 2px solid #c69867;
+  background-color: #ebc886;
+  border-radius: 10px;
+  color: black;
+  display: inline-block;
+  margin-top: 15px;
 }
 
 .question {
   font-family: var(--font-text);
   font-size: 1.2rem;
+  margin-bottom: 15px;
 }
 
 #timeUpDialog {
-    font-family: var(--font-text);
-    font-size: 1.2rem;
-    position-area : center;
-    width: 30rem;
-    height: auto;
-    border-radius: 10px;
-    border: none;
-    background: #f8f9f1;
-    padding: 25px;
+  font-family: var(--font-text);
+  font-size: 1.2rem;
+  position-area: center;
+  width: 30rem;
+  height: auto;
+  border-radius: 10px;
+  border: none;
+  background: #f8f9f1;
+  padding: 25px;
 }
 
-#tempsEcoule{
+#tempsEcoule {
   margin-top: 5%;
   font-size: 1.8rem;
   font-weight: 500;
@@ -302,7 +297,7 @@ body {
   color: #c69867;
 }
 
-#bonneReponse{
+#bonneReponse {
   background-color: #c69867;
   border-radius: 10px;
   color: var(--color-white);
@@ -314,13 +309,12 @@ body {
   margin-top: 5%;
   position: relative;
   width: 100%;
-  max-width: 800px;   /* largeur max */
+  max-width: 800px; /* largeur max */
   margin: 20px auto;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  
 }
 
 #iframe iframe {
@@ -334,25 +328,59 @@ body {
 
 
 
-#name-container{
+#name-container {
   font-family: var(--font-text);
   font-size: 1.2rem;
   margin-top: 10%;
 }
 
-#inputID{
+#inputID {
   width: 100%;
   font-family: var(--font-text);
   font-size: 1.2rem;
-  height: 2rem;
+  height: 2.5rem;
   text-align: center;
-  color:#c69867 ;
+  color: #c69867;
   border: none;
+  outline: 2px solid var(--color-brownlight);
   border-radius: 10px;
+  margin-bottom: 15px;
+  font-weight: 300;
 }
 
-#inputID:focus{
-  outline: 2px solid #c69867;
+#inputID:focus {
+  outline: 2px solid var(--color-brown);
+}
+
+#classementDialog{
+  font-family: var(--font-text);
+    font-size: 1.2rem;
+    position-area : center;
+    width: 30rem;
+    height: auto;
+    border-radius: 10px;
+    border: none;
+    background: #f8f9f1;
+    padding: 25px;
+    text-align: center;
+    background-color: var(--color-white);
+}
+
+#titreClassement{
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: #c69867;
+}
+
+#classementList{
+  background-color: #f5db9e;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 5%;
+  text-align: justify;
+  padding-left: 20%;
 }
 
 @media (max-width: 600px) {

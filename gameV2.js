@@ -317,7 +317,7 @@ function showLeaderboard(leaderboard) {
   //Crée le classement
   leaderboard.forEach((entry, index) => {
     const item = document.createElement("p");
-    item.textContent = `${index + 1}.${entry.name} - ${entry.points} pts`;
+    item.textContent = `${index + 1}. ${entry.name} : ${entry.points} pts`;
     classementList.appendChild(item);
   });
   //classementDialog.showModal()

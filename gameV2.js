@@ -157,7 +157,6 @@ function countdown() {
 
 
 // Fonction pour le bouton Suivant
-boutonSuivant.classList.add("btn-commencer")
 boutonSuivant.addEventListener("click", () => {
   if (score === maxScore) {
     confetti({
